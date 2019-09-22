@@ -8,8 +8,10 @@ import (
 
 	// GAE
 	"github.com/yhidetoshi/GoEchoGAE/handler"
+	"github.com/yhidetoshi/GoEchoGAE/authentication"
 	// local only
 	//"./handler"
+	//"./authentication"
 )
 
 // GAE
@@ -24,6 +26,9 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.Use(middleware.Gzip())
+
+	// Basic Auth
+	e.Use(authentication.BasicAuth())
 
 	// ルーティング
 	e.GET("/metal", handler.FetchMetal())
