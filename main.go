@@ -7,8 +7,8 @@ import (
 	"net/http"
 
 	// GAE
-	"github.com/yhidetoshi/GoEchoGAE/handler"
-	"github.com/yhidetoshi/GoEchoGAE/authentication"
+	"github.com/yhidetoshi/apiEchoGAE/handler"
+	"github.com/yhidetoshi/apiEchoGAE/authentication"
 	// local only
 	//"./handler"
 	//"./authentication"
