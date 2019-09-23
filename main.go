@@ -6,9 +6,9 @@ import (
 	"google.golang.org/appengine"
 	"net/http"
 
+	"github.com/yhidetoshi/apiEchoGAE/authentication"
 	// GAE
 	"github.com/yhidetoshi/apiEchoGAE/handler"
-	"github.com/yhidetoshi/apiEchoGAE/authentication"
 	// local only
 	//"./handler"
 	//"./authentication"
@@ -26,7 +26,6 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.Use(middleware.Gzip())
-
 	// Basic Auth
 	e.Use(authentication.BasicAuth())
 
