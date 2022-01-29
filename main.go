@@ -31,7 +31,7 @@ func main() {
 	e.GET("/metal", handler.FetchMetal)
 
 	// サーバー起動 at local
-	e.Start(":1323")
+	//e.Start(":1323")
 
 	// GAE
 	appengine.Main()

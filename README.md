@@ -14,4 +14,4 @@ env_variables:
   - `gcloud app deploy --project ${GCP_PROJECT_ID}`
 
 - api
-  - `curl https://${GCP_PROJECT_ID}.appspot.com/metal`
+  - `curl -u ${ID}:${PW} https://${GCP_PROJECT_ID}.appspot.com/metal`
