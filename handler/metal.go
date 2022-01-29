@@ -52,9 +52,6 @@ type Platinum struct {
 	PurchaseTax int `json:"purchaseTax"`
 }
 
-//func FetchMetal() echo.HandlerFunc {
-//	return func(c echo.Context) error {
-
 func FetchMetal(c echo.Context) error {
 	var goldRetailTax, goldPurchaseTax, platinumRetailTax, platinumPurchaseTax string
 	jst := time.FixedZone(timezone, offset)
@@ -111,5 +108,4 @@ func FetchMetal(c echo.Context) error {
 		fmt.Println(err)
 	}
 	return c.String(http.StatusOK, string(bytesDurationBytesJSON))
-	//	}
 }
