@@ -1,17 +1,15 @@
 package main
 
 import (
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
-	"google.golang.org/appengine"
 	"net/http"
 
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/yhidetoshi/apiEchoGAE/authentication"
+	"google.golang.org/appengine"
+
 	// GAE
 	"github.com/yhidetoshi/apiEchoGAE/handler"
-	// local only
-	//"./handler"
-	//"./authentication"
 )
 
 // GAE
@@ -30,10 +28,10 @@ func main() {
 	e.Use(authentication.BasicAuth())
 
 	// ルーティング
-	e.GET("/metal", handler.FetchMetal())
+	e.GET("/metal", handler.FetchMetal)
 
 	// サーバー起動 at local
-	//e.Start(":1323")
+	e.Start(":1323")
 
 	// GAE
 	appengine.Main()
