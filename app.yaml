@@ -4,8 +4,9 @@ handlers:
 - url: /.*
   script: auto
 includes:
-- secret.yamlenv: standard
+- secret.yaml
 
+env: standard
 instance_class: F1
 automatic_scaling:
   min_idle_instances: automatic
